@@ -1,0 +1,14 @@
+{
+  "name": "@meglalley/envision-stroubles-data-analysis-project",
+  "main": "07c69bb5eb032ef4@3209.js",
+  "version": "3209.0.0",
+  "homepage": "https://observablehq.com/@meglalley/envision-stroubles-data-analysis-project",
+  "author": {
+    "name": "Megan Hicks",
+    "url": "https://observablehq.com/@meglalley"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
