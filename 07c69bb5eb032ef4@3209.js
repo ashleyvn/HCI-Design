@@ -5,9 +5,12 @@ import define3 from "./1b3a22cd8be84c2f@73.js";
 import define4 from "./7dfec509126263f5@315.js";
 import define5 from "./a33468b95d0b15b0@808.js";
 
-function _1(md){return(
+
+function _1(md){
+  return(
 md` # Envision Stroubles Data Analysis Project`
-)}
+)
+}
 
 function _2(md){return(
 md`Team Name: Envision Stroubles
