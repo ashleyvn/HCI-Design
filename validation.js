@@ -39,36 +39,7 @@
     - Users can also choose to download their dataset for further analysis on other platforms`
     )}
     
-    function _97(md){return(
-    md`## **Credits**`
-    )}
-    
-    function _98(md){return(
-    md` All the team members interviewed the client, Dr. Hession on various occasions and took well structured notes during all the meetings. `
-    )}
-    
-    function _99(md){return(
-    md`All team members were directly involved in developing, writing, and editing Phase 1 and Phase 2 documents.`
-    )}
-    
-    function _100(md){return(
-    md`Since this was a team project, we wanted to be sure we all had the opportunity to learn how to accomplish key programming challenges during the project.  As a result, we set up a shared notebook and a Discord channel so that we could all participate as the notebook/project was developed.`
-    )}
-    
-    function _101(md){return(
-    md`By sharing the Observable Notebook, we were able to all contribute to the programming aspect of the project.  One person often started with one part of the development and others were able to "take the baton" when someone got stuck.`
-    )}
-    
-    function _102(md){return(
-    md`Ian Chang - Worked on data downloading, dataset formatting, time series plot development, parallel coordinates chart development, user selection options, dataset downloading, notebook editing and organization.
-    
-    Nidhi Chopdekar -Worked on data downloading, dataset formatting, time series plot development, parallel coordinates chart development, user selection options, dataset downloading, notebook editing and organization. 
-    
-    Megan Hicks - Worked on data downloading, dataset formatting, time series plot development, parallel coordinates chart development, user selection options, dataset downloading, notebook editing and organization.
-    
-    Shashank Vidiyala - Worked on data downloading, dataset formatting, time series plot development, parallel coordinates chart development, user selection options, dataset downloading, notebook editing and organization.`
-    )}
-    
+
     
     export default function define(runtime, observer) {
       const main = runtime.module();
@@ -81,12 +52,6 @@
       main.variable(observer()).define(["md"], _94);
       main.variable(observer()).define(["md"], _95);
       main.variable(observer()).define(["md"], _96);
-      main.variable(observer()).define(["md"], _97);
-      main.variable(observer()).define(["md"], _98);
-      main.variable(observer()).define(["md"], _99);
-      main.variable(observer()).define(["md"], _100);
-      main.variable(observer()).define(["md"], _101);
-      main.variable(observer()).define(["md"], _102);
       return main;
     }
     
