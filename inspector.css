@@ -11,7 +11,7 @@
     float: left;
     color: #f2f2f2;
     text-align: center;
-    padding: 14px 16px;
+    padding: 1% 2%;
     text-decoration: none;
     font-size: 17px;
   }
@@ -25,5 +25,18 @@
   /* Add a color to the active/current link */
   .topnav a.active {
     background-color: #04AA6D;
+    color: white;
+  }
+
+  table {
+    left: 0%;
+    top: 20%;
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+}
+tr { 
+    border: solid;
+    border-width: 1px 0;
     color: white;
   }
