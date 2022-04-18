@@ -19,36 +19,34 @@ function _16(md){return(
 md`**==================================================================================================================================**`
 )}
 
-function _17(md){return(
-md`# 1.0 Get the data`
-)}
+// function _17(md){return(
+// md`# 1.0 Get the data`
+// )}
 
-function _18(md){return(
-md`### 1.1  Initially, we had hoped to access the data "live"
-### This was not possible - so the rest of the presentation/demo will be with a static file.
-### We'll talk about the cloud access at the end.`
-)}
+// function _18(md){return(
+// md`### 1.1  Initially, we had hoped to access the data "live"
+// ### This was not possible - so the rest of the presentation/demo will be with a static file.
+// ### We'll talk about the cloud access at the end.`
+// )}
 
-function _19(md){return(
-md`
+// function _19(md){return(
+// md`
+// ## Our Focus became how incorporate user input, flexibility, and choice within visualizations.
+// - **For this project, we used a static download of the dynamic data file for data at Bridge 1**
+// - **We created a python file to join the data together from Bridge 1:  "infovis.py"**`
+// )}
 
+// function _20(md){return(
+// md`### We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
+// )}
 
-## Our Focus became how incorporate user input, flexibility, and choice within visualizations.
-- **For this project, we used a static download of the dynamic data file for data at Bridge 1**
-- **We created a python file to join the data together from Bridge 1:  "infovis.py"**`
-)}
+// async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
+// d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...d3.autoType(obj),TIMESTAMP: parseDate(obj['TIMESTAMPRECORD']), DAYSTAMP: (new Date(parseDate(obj['TIMESTAMPRECORD'])).toDateString()), WEEK: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").isoWeek(), MONTH: (moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").month()+1), YEAR: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").year()  }))
+// )}
 
-function _20(md){return(
-md`### We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
-)}
-
-async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
-d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...d3.autoType(obj),TIMESTAMP: parseDate(obj['TIMESTAMPRECORD']), DAYSTAMP: (new Date(parseDate(obj['TIMESTAMPRECORD'])).toDateString()), WEEK: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").isoWeek(), MONTH: (moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").month()+1), YEAR: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").year()  }))
-)}
-
-function _parseDate(d3){return(
-d3.timeParse('%Y-%m-%d %H:%M:%S')
-)}
+// function _parseDate(d3){return(
+// d3.timeParse('%Y-%m-%d %H:%M:%S')
+// )}
 
 function _23(md){return(
 md`**=============================================================================================================================**`
