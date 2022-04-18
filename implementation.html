@@ -11,7 +11,7 @@
         <a href="validation.html">Validation</a>
     </div>
 
-    <h1>IMPLEMENTATION</h1>
+    <!-- <h1>IMPLEMENTATION</h1>
 
     <details>
         <summary>1.0 Get the Data</summary>
@@ -26,14 +26,16 @@
 
             We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
         </p>
-    </details>
+    </details> -->
 
 <script type="module">
-import define from "./date.js";
-import {Runtime, Library, Inspector} from "./runtime.js";
+    import define from "./implementation.js";
+    import {Runtime, Library, Inspector} from "./runtime.js";
+    
+    const runtime = new Runtime();
+    const main = runtime.module(define, Inspector.into(document.body));
+    </script>
 
-const runtime = new Runtime();
-const main = runtime.module(define, Inspector.into(document.body));
-</script>
+<p> Hello </p>
 
 
