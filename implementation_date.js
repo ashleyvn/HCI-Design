@@ -3,6 +3,9 @@ import define2 from "./4be0b7b0578fccff@1366.js";
 import define3 from "./1b3a22cd8be84c2f@73.js";
 import define4 from "./7dfec509126263f5@315.js";
 import define5 from "./a33468b95d0b15b0@808.js";
+function _moment(require){return(
+  require("moment")
+  )}
 
 async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
     d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...d3.autoType(obj),TIMESTAMP: parseDate(obj['TIMESTAMPRECORD']), DAYSTAMP: (new Date(parseDate(obj['TIMESTAMPRECORD'])).toDateString()), WEEK: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").isoWeek(), MONTH: (moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").month()+1), YEAR: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").year()  }))
@@ -19,6 +22,7 @@ async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
 
         main.variable(observer("joined_files2")).define("joined_files2", ["d3","FileAttachment","parseDate","moment"], _joined_files2);
         main.variable(observer("parseDate")).define("parseDate", ["d3"], _parseDate);
+        main.variable(observer("moment")).define("moment", ["require"], _moment);
 
         return main;
       }

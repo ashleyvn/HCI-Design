@@ -11,31 +11,32 @@
         <a href="validation.html">Validation</a>
     </div>
 
-    <!-- <h1>IMPLEMENTATION</h1>
+    <h1>IMPLEMENTATION</h1>
 
     <details>
         <summary>1.0 Get the Data</summary>
-        <p>
-            1.1  Initially, we had hoped to access the data "live" 
-            This was not possible - so the rest of the presentation/demo will be with a static file.
-            We'll talk about the cloud access at the end.
+        <p>1.1  Initially, we had hoped to access the data "live"</p>
+        <p>This was not possible - so the rest of the presentation/demo will be with a static file.</p>
+        <p>We'll talk about the cloud access at the end.</p>
+        <p>Our Focus became how incorporate user input, flexibility, and choice within visualizations.</p>
+        <ul>
+            <li>For this project, we used a static download of the dynamic data file for data at Bridge 1</li>
+            <li>We created a python file to join the data together from Bridge 1:  "infovis.py"</li>
+        </ul>
+        <p>We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format</p>
+    </details>
 
-            Our Focus became how incorporate user input, flexibility, and choice within visualizations.
-            For this project, we used a static download of the dynamic data file for data at Bridge 1**
-            We created a python file to join the data together from Bridge 1:  "infovis.py"**`
-
-            We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
-        </p>
-    </details> -->
+    <details>
+        <summary>2.0 User selections</summary>
+        <p>2.1. Filter by user selected time frame</p>
+        <!-- implementation_filter.js -->
+    </details>
 
 <script type="module">
-    import define from "./implementation.js";
+    import define from "./implementation_filter.js";
     import {Runtime, Library, Inspector} from "./runtime.js";
     
     const runtime = new Runtime();
     const main = runtime.module(define, Inspector.into(document.body));
     </script>
-
-<p> Hello </p>
-
 

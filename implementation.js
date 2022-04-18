@@ -7,50 +7,50 @@ import define5 from "./a33468b95d0b15b0@808.js";
 
 
 
-function _14(md){return(
-md`**==================================================================================================================================**`
-)}
+// function _14(md){return(
+// md`**==================================================================================================================================**`
+// )}
 
-function _15(md){return(
-md`# **IMPLEMENTATION**`
-)}
+// function _15(md){return(
+// md`# **IMPLEMENTATION**`
+// )}
 
-function _16(md){return(
-md`**==================================================================================================================================**`
-)}
+// function _16(md){return(
+// md`**==================================================================================================================================**`
+// )}
 
-function _17(md){return(
-md`# 1.0 Get the data`
-)}
+// function _17(md){return(
+// md`# 1.0 Get the data`
+// )}
 
-function _18(md){return(
-md`### 1.1  Initially, we had hoped to access the data "live"
-### This was not possible - so the rest of the presentation/demo will be with a static file.
-### We'll talk about the cloud access at the end.`
-)}
+// function _18(md){return(
+// md`### 1.1  Initially, we had hoped to access the data "live"
+// ### This was not possible - so the rest of the presentation/demo will be with a static file.
+// ### We'll talk about the cloud access at the end.`
+// )}
 
-function _19(md){return(
-md`
-## Our Focus became how incorporate user input, flexibility, and choice within visualizations.
-- **For this project, we used a static download of the dynamic data file for data at Bridge 1**
-- **We created a python file to join the data together from Bridge 1:  "infovis.py"**`
-)}
+// function _19(md){return(
+// md`
+// ## Our Focus became how incorporate user input, flexibility, and choice within visualizations.
+// - **For this project, we used a static download of the dynamic data file for data at Bridge 1**
+// - **We created a python file to join the data together from Bridge 1:  "infovis.py"**`
+// )}
 
-function _20(md){return(
-md`### We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
-)}
+// function _20(md){return(
+// md`### We will be creating time series charts, so date (which comes in as a string) needed to be converted to "date" format`
+// )}
 
-async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
-d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...d3.autoType(obj),TIMESTAMP: parseDate(obj['TIMESTAMPRECORD']), DAYSTAMP: (new Date(parseDate(obj['TIMESTAMPRECORD'])).toDateString()), WEEK: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").isoWeek(), MONTH: (moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").month()+1), YEAR: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").year()  }))
-)}
+// async function _joined_files2(d3,FileAttachment,parseDate,moment){return(
+// d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...d3.autoType(obj),TIMESTAMP: parseDate(obj['TIMESTAMPRECORD']), DAYSTAMP: (new Date(parseDate(obj['TIMESTAMPRECORD'])).toDateString()), WEEK: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").isoWeek(), MONTH: (moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").month()+1), YEAR: moment(parseDate(obj['TIMESTAMPRECORD']),"YYYY-MM-DD").year()  }))
+// )}
 
-function _parseDate(d3){return(
-d3.timeParse('%Y-%m-%d %H:%M:%S')
-)}
+// function _parseDate(d3){return(
+// d3.timeParse('%Y-%m-%d %H:%M:%S')
+// )}
 
-function _23(md){return(
-md`**=============================================================================================================================**`
-)}
+// function _23(md){return(
+// md`**=============================================================================================================================**`
+// )}
 
 function _24(md){return(
 md`# 2.0 User selections`
@@ -60,23 +60,7 @@ function _25(md){return(
 md`## 2.1.  Filter by user selected time frame`
 )}
 
-function _StartDate_Example(Inputs,time_first,time_last){return(
-Inputs.datetime({
-  label: "Input starting date (link not active)", 
-  min: time_first,
-  max: time_last,
-  value: "2020-09-01"
-})
-)}
 
-function _EndDate_Example(Inputs,time_first,time_last){return(
-Inputs.datetime({
-  label: "Input ending date (link not active)", 
-  min: time_first,
-  max: time_last,
-  value: "2020-09-14"
-})
-)}
 
 function _28(md){return(
 md`## 2.2. Aggregate by user selected aggregation
