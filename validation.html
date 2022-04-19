@@ -9,6 +9,7 @@
         <a href="overview.html">Overview</a>
         <a href="implementation.html">Implementation</a>
         <a class="active" href="validation.html">Validation</a>
+        <a href="charts.html">Charts</a>
     </div>
     <h1>VALIDATION</h1>
     
@@ -36,6 +37,14 @@
             <li>Users can also choose to download their dataset for further analysis on other platforms.</li>
         </ul>
     </details>
+
+    <script type="module" >
+        import define from "./implementation.js";
+        import {Runtime, Library, Inspector} from "./runtime.js";
+        
+        const runtime = new Runtime();
+        const main = runtime.module(define, Inspector.into(document.body));
+    </script>
     
 
 
