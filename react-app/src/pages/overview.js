@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
-import img from './files/f4c68884deff4bbdf44586f10cd7def9ffb61821ac78691ac9bfc76aac9ef6e96d472777b94ea588b77caa502a00edc6e7f43bdf4c5cb2c98a8b266cb17d583d';
-import img2 from './files/bd27c5c48a16291dce41d2455eac54d343911a9b2c6dd3f2c2ef7902045f656935c0f8ac449f061f7ccdbb5104bb4170a45c36e5f45145bbc04ed6874ac9dd43';
+import img from './files/img1';
+import img2 from './files/img2';
 const Overview = () => {
 return (
 	<div>

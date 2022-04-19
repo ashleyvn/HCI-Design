@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import img from './files/29e53d0f2f7b89e98a8efa90c2f88deffaf2ab93a663889eae99500330eb39cbe3226ca3e7c3b06a7df913a639d61219c4f02ca8bc5c888d51d2a79a9041f333'
+import img from './files/img'
 
 const Implementation = () => {
 return (
