@@ -560,10 +560,10 @@ function _76(d3,DOM,choice,parCoordDataNN)
     width: 1000,
     height: 400,
     margin: {
-      top: 30,
-      right: 10,
-      bottom: 10,
-      left: 0,
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: -250,
     },
   };
   
@@ -683,15 +683,13 @@ function _76(d3,DOM,choice,parCoordDataNN)
 
 async function _79(md,FileAttachment){return(
 md`
-| Option A: Normalized data                      | Option B: Raw data  
-|------------------------------------------------|--------------------------
+Option A: Normalized data | Option B: Raw data  
 Single column of values (all attributes in one column)                     
 <figure>
   <img src="${await FileAttachment("image@5.png").url()}" width="600">
 </figure>
 
-| Option C: Normalized data                      | Option D: Raw data  
-|------------------------------------------------|--------------------------
+Option C: Normalized data | Option D: Raw data  
 Multiple columns (one for each attribute)                     
 <figure>
   <img src="${await FileAttachment("image@7.png").url()}" width="600">
@@ -709,10 +707,6 @@ select({
     { value:  "parCoordDataNN"  , label: "Option D"}
   ]
 })
-)}
-
-function _81(md){return(
-md`#### Once you've decided which file you want to save, click on "Save" button (below) and your file will be downloaded to your device.`
 )}
 
 function _82(DOM,blob){return(
@@ -909,62 +903,62 @@ export default function define(runtime, observer)
   const child2 = runtime.module(define2);
   main.import("fonts", child2);  
   main.import("checkbox", child1);
-  main.variable(observer("SelectedDatesData")).define("SelectedDatesData", ["joined_files2","StartDate1","EndDate1"], _SelectedDatesData);
-  main.variable(observer("mapByTime")).define("mapByTime", ["d3"], _mapByTime);
-  main.variable(observer("aggrTimeFile")).define("aggrTimeFile", ["whichFile","mapByTime","SelectedDatesData","choice","rollupByDay","rollupByWeek","rollupByMonth"], _aggrTimeFile);
-  main.variable(observer("rollupByWeek")).define("rollupByWeek", ["d3"], _rollupByWeek);
-  main.variable(observer("rollupByDay")).define("rollupByDay", ["d3"], _rollupByDay);
-  main.variable(observer("rollupByMonth")).define("rollupByMonth", ["d3"], _rollupByMonth);
-  main.variable(observer("images")).define("images", ["FileAttachment"], _images);
-  main.variable(observer("image_links")).define("image_links", ["images"], _image_links);
-  main.variable(observer("image_links_dates")).define("image_links_dates", ["images"], _image_links_dates);
-  main.variable(observer("currentUrl")).define("currentUrl", _currentUrl);
-  main.variable(observer("height")).define("height", _height);
-  main.variable(observer("margin")).define("margin", _margin);
-  main.variable(observer("userArray")).define("userArray", ["aggrTimeFile","d3"], _userArray);
-  main.variable(observer("userTidy")).define("userTidy", ["userArray","choice","d3"], _userTidy);
-  main.variable(observer("parseDate")).define("parseDate", ["d3"], _parseDate);
-  main.variable(observer("moment")).define("moment", ["require"], _moment);        
-  main.variable(observer("joined_files2")).define("joined_files2", ["d3","FileAttachment","parseDate","moment"], _joined_files2);
-  main.variable(observer("time_interval")).define("time_interval", _time_interval);
-  main.variable(observer("units_map")).define("units_map", _units_map);
-  main.variable(observer("Times")).define("Times", ["joined_files2"], _Times);
-  main.variable(observer("time_first")).define("time_first", ["d3","Times"], _time_first);
-  main.variable(observer("time_last")).define("time_last", ["d3","Times"], _time_last);
+  main.variable().define("SelectedDatesData", ["joined_files2","StartDate1","EndDate1"], _SelectedDatesData);
+  main.variable().define("mapByTime", ["d3"], _mapByTime);
+  main.variable().define("aggrTimeFile", ["whichFile","mapByTime","SelectedDatesData","choice","rollupByDay","rollupByWeek","rollupByMonth"], _aggrTimeFile);
+  main.variable().define("rollupByWeek", ["d3"], _rollupByWeek);
+  main.variable().define("rollupByDay", ["d3"], _rollupByDay);
+  main.variable().define("rollupByMonth", ["d3"], _rollupByMonth);
+  main.variable().define("images", ["FileAttachment"], _images);
+  main.variable().define("image_links", ["images"], _image_links);
+  main.variable().define("image_links_dates", ["images"], _image_links_dates);
+  main.variable().define("currentUrl", _currentUrl);
+  main.variable().define("height", _height);
+  main.variable().define("margin", _margin);
+  main.variable().define("userArray", ["aggrTimeFile","d3"], _userArray);
+  main.variable().define("userTidy", ["userArray","choice","d3"], _userTidy);
+  main.variable().define("parseDate", ["d3"], _parseDate);
+  main.variable().define("moment", ["require"], _moment);    
+  main.variable().define("joined_files2", ["d3","FileAttachment","parseDate","moment"], _joined_files2);
+  main.variable().define("time_interval", _time_interval);
+  main.variable().define("units_map", _units_map);
+  main.variable().define("Times", ["joined_files2"], _Times);
+  main.variable().define("time_first", ["d3","Times"], _time_first);
+  main.variable().define("time_last", ["d3","Times"], _time_last);
   main.variable(observer("viewof choice")).define("viewof choice", ["checkbox"], _choice);
-  main.variable(observer("choice")).define("choice", ["Generators", "viewof choice"], (G, _) => G.input(_));
+  main.variable().define("choice", ["Generators", "viewof choice"], (G, _) => G.input(_));
   main.variable(observer("viewof StartDate1")).define("viewof StartDate1", ["Inputs","time_first","time_last"], _StartDate1);
-  main.variable(observer("StartDate1")).define("StartDate1", ["Generators", "viewof StartDate1"], (G, _) => G.input(_));
+  main.variable().define("StartDate1", ["Generators", "viewof StartDate1"], (G, _) => G.input(_));
   main.variable(observer("viewof EndDate1")).define("viewof EndDate1", ["Inputs","time_first","time_last"], _EndDate1);
-  main.variable(observer("EndDate1")).define("EndDate1", ["Generators", "viewof EndDate1"], (G, _) => G.input(_));
+  main.variable().define("EndDate1", ["Generators", "viewof EndDate1"], (G, _) => G.input(_));
   main.variable(observer("viewof whichFile")).define("viewof whichFile", ["Inputs","time_interval"], _whichFile);
-  main.variable(observer("whichFile")).define("whichFile", ["Generators", "viewof whichFile"], (G, _) => G.input(_));
+  main.variable().define("whichFile", ["Generators", "viewof whichFile"], (G, _) => G.input(_));
   main.variable(observer("chart")).define("chart", ["DOM","d3","width","height","fonts","series","color","line2","xAxis","yAxis","x3","userDate","currentUrl","image_links","image_links_dates","choice","userArray","_","units_map"], _chart);
-  main.variable(observer("x3")).define("x3", ["d3","xDomain","margin","width"], _x3);
-  main.variable(observer("xAxis")).define("xAxis", ["height","margin","d3","x3"], _xAxis);
-  main.variable(observer("y2")).define("y2", ["d3","yRange","height","margin"], _y2);
-  main.variable(observer("yRange")).define("yRange", ["d3","userTidy"], _yRange);
-  main.variable(observer("yAxis")).define("yAxis", ["margin","d3","y2"], _yAxis);
-  main.variable(observer("values")).define("values", ["d3","userTidy"], _values);
-  main.variable(observer("userDate")).define("userDate", ["userArray"], _userDate);
-  main.variable(observer("xDomain")).define("xDomain", ["d3","userDate"], _xDomain);
-  main.variable(observer("series")).define("series", ["choice","userDate","values"], _series);
-  main.variable(observer("line2")).define("line2", ["d3","x3","userDate","y2"], _line2);
-  main.variable(observer("color")).define("color", ["d3","choice"], _color);
+  main.variable().define("x3", ["d3","xDomain","margin","width"], _x3);
+  main.variable().define("xAxis", ["height","margin","d3","x3"], _xAxis);
+  main.variable().define("y2", ["d3","yRange","height","margin"], _y2);
+  main.variable().define("yRange", ["d3","userTidy"], _yRange);
+  main.variable().define("yAxis", ["margin","d3","y2"], _yAxis);
+  main.variable().define("values", ["d3","userTidy"], _values);
+  main.variable().define("userDate", ["userArray"], _userDate);
+  main.variable().define("xDomain", ["d3","userDate"], _xDomain);
+  main.variable().define("series", ["choice","userDate","values"], _series);
+  main.variable().define("line2", ["d3","x3","userDate","y2"], _line2);
+  main.variable().define("color", ["d3","choice"], _color);
 
-  main.variable(observer("userTidyNotNormalized")).define("userTidyNotNormalized", ["userArray","choice","d3"], _userTidyNotNormalized);
+  main.variable().define("userTidyNotNormalized", ["userArray","choice","d3"], _userTidyNotNormalized);
 
   main.variable(observer()).define(["d3","DOM","choice","parCoordDataNN"], _76);
-main.variable(observer("parCoordData")).define("parCoordData", ["userArray","choice","d3"], _parCoordData);
-main.variable(observer("parCoordDataNN")).define("parCoordDataNN", ["userArray","choice"], _parCoordDataNN);
+main.variable().define("parCoordData", ["userArray","choice","d3"], _parCoordData);
+main.variable().define("parCoordDataNN", ["userArray","choice"], _parCoordDataNN);
 
 main.import("select", child1);
 
 main.variable(observer()).define(["md","FileAttachment"], _79);
 main.variable(observer("viewof dloadFile")).define("viewof dloadFile", ["select"], _dloadFile);
-main.variable(observer("dloadFile")).define("dloadFile", ["Generators", "viewof dloadFile"], (G, _) => G.input(_));
+main.variable().define("dloadFile", ["Generators", "viewof dloadFile"], (G, _) => G.input(_));
 main.variable(observer()).define(["DOM","blob"], _82);
-main.variable(observer("blob")).define("blob", ["d3","downloadFile"], _blob);
-main.variable(observer("downloadFile")).define("downloadFile", ["dloadFile","userTidy","userTidyNotNormalized","parCoordData","parCoordDataNN"], _downloadFile);
+main.variable().define("blob", ["d3","downloadFile"], _blob);
+main.variable().define("downloadFile", ["dloadFile","userTidy","userTidyNotNormalized","parCoordData","parCoordDataNN"], _downloadFile);
 
 }
