@@ -560,10 +560,10 @@ function _76(d3,DOM,choice,parCoordDataNN)
     width: 1000,
     height: 400,
     margin: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: -250,
+      top: 30,
+      right: 10,
+      bottom: 10,
+      left: 0,
     },
   };
   
