@@ -5,28 +5,40 @@
     background-color: #444e62;
     overflow: hidden;
     width:100%;
+    text-align: center;
 }
   
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
+  float: center;
   color: #f2f2f2;
   text-align: center;
   padding: 1% 2%;
   text-decoration: none;
-  font-size: 17px;
+  font-size: auto;
+  /* width: calc(100% / 4); */
 }
 
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #ddd;
   color: black;
+  text-align: center;
+  padding: 1% 2%;
+  margin: 0;
+  text-decoration: none;
+  font-size: auto;
+  
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
   background-color: #758bb9;
   color: white;
+  text-align: center;
+  padding: 1% 2%;
+  text-decoration: none;
+  font-size: auto;
 }
 
 /* Make summary headers bold*/
@@ -37,7 +49,13 @@ summary {
 body {
   background-color: #282c34;
   color:white; 
-  text-align: left;
+  text-align: center;
+  width: auto;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+    zoom: 130%;
 }
 
 .oi-ec050e-input {
