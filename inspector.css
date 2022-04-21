@@ -2,8 +2,9 @@
 
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: #333;
+    background-color: #444e62;
     overflow: hidden;
+    width:100%;
 }
   
 /* Style the links inside the navigation bar */
@@ -24,7 +25,7 @@
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
+  background-color: #758bb9;
   color: white;
 }
 
@@ -33,3 +34,16 @@ summary {
     font-weight: bold;
   }
 
+body {
+  background-color: #282c34;
+  color:white; 
+  text-align: left;
+}
+
+.oi-ec050e-input {
+  color: black;
+}
+
+#oi-ec050e-1 {
+  color:black;
+}

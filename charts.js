@@ -374,7 +374,7 @@ function _chart(DOM,d3,width,height,fonts,series,color,line2,xAxis,yAxis,x3,user
   var mouseLine = svg
     .append("path") // create vertical line to follow mouse
     .attr("class", "mouse-line")
-    .attr("stroke", "#303030")
+    .attr("stroke", "white")
     .attr("stroke-width", 2)
     .attr("opacity", "0");
    var tooltip = svg
@@ -672,7 +672,7 @@ function _76(d3,DOM,choice,parCoordDataNN)
       .style("text-anchor", "middle")
       .attr("y", -9)
       .text(function(d) { return d; })
-      .style("fill", "black")
+      .style("fill", "white")
 
 
   return svg.node();
