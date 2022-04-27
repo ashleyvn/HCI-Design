@@ -13,68 +13,6 @@ function _parseDate(d3){return(
 d3.timeParse('%Y-%m-%d %H:%M:%S')
 )}
 
-function _StartDate_Example(Inputs,time_first,time_last){return(
-Inputs.datetime({
-  label: "Input starting date (link not active)", 
-  min: time_first,
-  max: time_last,
-  value: "2020-09-01"
-})
-)}
-
-function _EndDate_Example(Inputs,time_first,time_last){return(
-Inputs.datetime({
-  label: "Input ending date (link not active)", 
-  min: time_first,
-  max: time_last,
-  value: "2020-09-14"
-})
-)}
-
-function _whichFile_example(Inputs,time_interval){return(
-Inputs.select(time_interval, {
-  label:  "Choose time interval (link not active):", multiple: false})
-)}
-
-function _choice_example(checkbox){return(
-checkbox({
-  title: "Select Attributes to Include for Time Series Chart (link not active)",
-  
-  options: [
-    { value:  "Batt_V_Min", label: "Batt_V_Min"},
-    { value:  "Rain_mm_Tot", label: "Rain_mm_Tot"},
-    { value:  "SlrkW", label: "SlrkW"},
-    { value:  "SlrMJ", label: "SlrMJ"},
-    { value:  "SlrkWLOW", label: "SlrkWLOW"},
-    { value:  "SlrMJLOW", label: "SlrMJLOW"},
-    { value:  "WindSpd_ms", label: "WindSpd_ms"},
-    { value:  "WindDir_deg", label: "WindDir_deg"},
-    { value:  "TempAir_degC", label: "TempAir_degC"},
-    { value:  "TempAir_degCLOW", label: "TempAir_degCLOW"},
-    { value:  "VW", label: "VW"},
-    { value:  "PA_uS", label: "PA_uS"},
-    { value:  "TempSoil_degC", label: "TempSoil_degC"},
-    { value:  "RH", label: "RH"},
-    { value:  "RHLOW", label: "RHLOW"},
-    { value:  "BaroPressure_mmHg", label: "BaroPressure_mmHg"},
-    { value:  "HeatFlux", label: "HeatFlux"},
-    { value:  "BattV", label: "BattV"},
-    { value:  "Temp", label: "Temperature"},
-    { value:  "Con", label: "Con"},
-    { value: "pH", label: "pH"},
-    { value:  "Turb", label: "Turb"},
-    { value:  "DOpct", label: "DOpct"},
-    { value:  "DOmgl", label: "DOmgl"},
-    { value:  "Batt", label: "Batt"}
-    
-  ],
-  value: ["Temp", "Turb", "pH"],
-  //submit: true 
-})
-)}
-
-
-
 function _SelectedDatesData(joined_files2,StartDate1,EndDate1){return(
 joined_files2.filter( row => 
                                     row.TIMESTAMP >= StartDate1 && row.TIMESTAMP.getTime() <= EndDate1)
@@ -104,9 +42,9 @@ function _userArray(aggrTimeFile,d3){return(
 Array.from(aggrTimeFile, ([Date, value]) => ({ Date, value })).sort((a,b) => d3.ascending(a.Date, b.Date))
 )}
 
-function _userTimeStamp(userArray){return(
-userArray.map(d => d.Date)
-)}
+// function _userTimeStamp(userArray){return(
+// userArray.map(d => d.Date)
+// )}
 
 function _userTidy(userArray,choice,d3)
 {
@@ -202,27 +140,6 @@ function _parCoordDataNN(userArray,choice)
   return objArray
 }
 
-
-function _userNorm2(aggrTimeFile,d3)
-{
-  var userInstance  = []
-  var k = 0
-  
-    for (var i = 0; i< aggrTimeFile.length ; i++){
-     
-      var userObj = []
-      userObj[0]  =   aggrTimeFile[i][0] // this can be removed if date causes problems in the array; date is also in userTimeStamp array
-        for (var j = 0; j < aggrTimeFile[i].length ; j++){
-                
-                userObj[j+1] =   (aggrTimeFile[i].value[j]- d3.mean(aggrTimeFile, d => d.value[j]))/(d3.deviation(aggrTimeFile, d => d.value[j]))
-                    // change "j+1" in above line back to "j" if taking out date
-        }
-  userInstance[k] =  userObj
-                k = k+1
-              }  
-  return  userInstance
-}
-
 function _Times(joined_files2){return(
 joined_files2.map(d => d.TIMESTAMP)
 )}
@@ -233,25 +150,6 @@ d3.min(Times)
 
 function _time_last(d3,Times){return(
 d3.max(Times)
-)}
-
-function _xScale(height,margin,d3,x2){return(
-g => g
-    .attr("transform", `translate(0,${height - margin.bottom})`)
-    .call(d3.axisBottom(x2))
-)}
-
-function _x2(d3,StartDate1,EndDate1,margin,width){return(
-d3.scaleTime()
-  .domain([StartDate1, EndDate1])
-  .range([margin.left, width - margin.right])
-  .nice()
-)}
-
-function _yScale(margin,d3,y){return(
-g => g
-    .attr("transform", `translate(${margin.left},0)`)
-    .call(d3.axisLeft(y))
 )}
 
 function _choice(checkbox){return(
@@ -284,7 +182,6 @@ checkbox({
     { value:  "DOpct", label: "DOpct"},
     { value:  "DOmgl", label: "DOmgl"},
     { value:  "Batt", label: "Batt"}
-    
   ],
   value: ["Temp", "Turb","pH"],
   //submit: true 
@@ -744,25 +641,6 @@ function _downloadFile(dloadFile,userTidy,userTidyNotNormalized,parCoordData,par
   }
   }
 
-
-function _downloadButton(d3,DOM){return(
-(data, filename = 'data.csv') => {
-  const csv = new Blob([d3.csvFormat(data)], { type: "text/csv" });
-  const size = (csv.size / 1024).toFixed(0);
-
-  const button = DOM.download(
-    csv,
-    filename,
-    `Download ${filename} (~${size} KB)`
-  );
-  return button;
-}
-)}
-
-function _109(md){return(
-md`## Helper Functions for rollup`
-)}
-
 function _mapByTime(d3){return(
 (timeseries,attributes)=>d3.rollup(timeseries,timeseries=>(attributes.map(aname => d3.median(timeseries,d=>d[aname]))),d=>d3.timeMinute (d['TIMESTAMP']))
 )}
@@ -787,18 +665,6 @@ function _115(rollupByDay,joined_files2){return(
 rollupByDay(joined_files2,['Temp','BattV'])
 )}
 
-async function _joined_files(d3,FileAttachment,parseDate){return(
-d3.csvParse( await FileAttachment("aggregated@2.csv").text(),(obj)=>({...obj,TIMESTAMP: parseDate(obj['TIMESTAMP'])}))
-)}
-
-function _117(){return(
-new Date(Date.now()).toUTCString()
-)}
-
-function _d3(require){return(
-require("d3@6")
-)}
-
 function _moment(require){return(
 require("moment")
 )}
@@ -807,33 +673,8 @@ function __(require){return(
 require('lodash')
 )}
 
-function _TableauColor(){return(
-["#4e79a7","#f28e2c","#e15759","#76b7b2","#59a14f","#edc949","#af7aa1","#ff9da7","#9c755f","#bab0ab"]
-)}
-
-function _line(md){return(
-md`d3.line()
-  .curve(d3.curveStepAfter)
-  .x(d => x(d.Date))
-  .y(d => y(d.attr))`
-)}
-
-function _y(d3,yRange,height,margin){return(
-d3.scaleLinear()
-    .domain([yRange[0], yRange[1]]).nice()
-    .range([height - margin.bottom, margin.top])
-)}
-
-function _dateParser(md){return(
-md`d3.timeParse("%Y-%m-%d %H:%M:%S")`
-)}
-
 function _time_interval(){return(
 ["minute", "day", "week", "month"]
-)}
-
-function _130(d3,joined_files2){return(
-d3.extent(joined_files2, d => d.TIMESTAMP)
 )}
 
 function _images(FileAttachment){return(
@@ -856,32 +697,6 @@ var url='';
   })
   
 }
-
-
-function _userNorm(userArray,d3)
-{
-  var userInstance  = {}
-  var k = 0
-  
-    for (var i = 0; i< userArray.length ; i++){
-     
-      var userObj = []
-      // userObj[0]  =   userArray[i].Date  // this can be removed if date causes problems in the array; date is also in userTimeStamp array
-        for (var j = 0; j < userArray[i].value.length ; j++){
-                
-                userObj[j] =   (userArray[i].value[j]- d3.mean(userArray, d => d.value[j]))/(d3.deviation(userArray, d => d.value[j]))
-                    // change "j+1" in above line back to "j" if taking out date
-        }
-  userInstance[userArray[i].Date] =  userObj
-                k = k+1
-              }  
-  return  userInstance
-}
-
-
-function _c(currentUrl){return(
-currentUrl
-)}
 
 function _units_map(){return(
 Object({
