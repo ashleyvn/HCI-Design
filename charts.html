@@ -4,17 +4,25 @@
 <link rel="stylesheet" type="text/css" href="./inspector.css">
 <body>
 
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="overview.html">Overview</a>
-        <a href="implementation.html">Implementation</a>
-        <a href="validation.html">Validation</a>
-        <a class="active" href="charts.html">Charts</a>
-        <!-- <a href="data.html">Data</a> -->
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <i class="fa fa-caret-down"></i>
+            <div class="menuIcon"></div>
+            <div class="menuIcon"></div>
+            <div class="menuIcon"></div>
+        </button>
+          <div class="dropdown-content">
+            <a class="active" href="index.html">Home</a>
+                <a href="overview.html">Overview</a>
+                <a href="implementation.html">Implementation</a>
+                <a href="validation.html">Validation</a>
+                <a href="charts.html">Charts</a>
+          </div>
+        </div>
     </div>
 
     <h1>Charts</h1>
-    <!-- <img src="./files/Stroubles_Creek_1.jpg"> -->
     <script type="module" >
         import define from "./charts.js";
         import {Runtime, Library, Inspector} from "./runtime.js";

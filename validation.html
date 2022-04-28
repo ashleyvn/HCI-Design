@@ -3,15 +3,25 @@
 <link rel="stylesheet" type="text/css" href="./inspector.css">
 <body>
 
-    <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="overview.html">Overview</a>
-        <a href="implementation.html">Implementation</a>
-        <a class="active" href="validation.html">Validation</a>
-        <a href="charts.html">Charts</a>
-        <!-- <a href="data.html">Data</a> -->
+    <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">
+            <i class="fa fa-caret-down"></i>
+            <div class="menuIcon"></div>
+            <div class="menuIcon"></div>
+            <div class="menuIcon"></div>
+        </button>
+          <div class="dropdown-content">
+            <a class="active" href="index.html">Home</a>
+                <a href="overview.html">Overview</a>
+                <a href="implementation.html">Implementation</a>
+                <a href="validation.html">Validation</a>
+                <a href="charts.html">Charts</a>
+          </div>
+        </div>
     </div>
-    <h1>VALIDATION</h1>
+
+    <h1>Validation</h1>
     <div class="imgbox">
         <img class="center-fit" src='./files/Stroubles_Creek_1.jpg'>
     </div>
@@ -19,29 +29,29 @@
     <details>
         <summary>1.0 Solution Justification</summary>
         <div>
-            <p>The main concerns and desires of the client that are addressed in our design</p>
+            <p>Main concerns and desires of the client that are addressed in our design:</p>
             <ul>
                 <li>Enables users to easily access the large amount of data collected by the StREAM Lab.</li>
                 <li>Enables users to easily download their chosen data for further off-line analysis.</li>
                 <li>Allowing the user to specify what time periods to visualize.</li>
                 <li>Allowing the user to determine which attributes to visualize.</li>
                 <li>Proof of concept to link images to chart for specific date via tooltip.</li>
-                <li> Facilitates better comparisons between various attributes and time frames.</li>
+                <li>Facilitates better comparisons between various attributes and time frames.</li>
             </ul> 
         </div>
     </details>
-    
+
     <details>
-        <summary>1.1 Changes from Phase-2</summary>
+        <summary>2.0 Website Layout Justification</summary>
         <div>
+            <p>Main concerns and desires for the website:</p>
             <ul>
-                <li>The initial design idea was to have different graphs for each attribute.</li>
-                <li>The visualization implemented shows all the attributes in a single graph.</li>
-                <li>The tooltip is also updated to show the readings of the selected attributes, along with the date and time.</li>
-                <li>A feature to display images at various time stamps is also incorporated.</li>
-                <li>Users are also allowed to choose the dataset (normalized / raw) they wish to visualize.</li>
-                <li>Users can also choose to download their dataset for further analysis on other platforms.</li>
-            </ul>
+                <li>Navigation bar header to easily navigate to different parts of the website</li>
+                <li>Dropdown details tabs to condense information</li>
+                <li>Dark Mode to accomodate for bright light settings</li>
+                <li>Adaptable for different screen sizes</li>
+                <li>Interactive charts to display data</li>
+            </ul> 
         </div>
     </details>
 
